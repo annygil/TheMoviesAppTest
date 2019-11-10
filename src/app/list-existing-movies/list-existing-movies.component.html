@@ -1,0 +1,8 @@
+<div>
+    <ul  class = "list-inline">
+        <li  *ngFor="let item of listMovie" >
+            <app-item [item]="item" (removeItem)="removeItemChild($event)"></app-item>
+        </li>
+     
+      </ul>
+</div>
