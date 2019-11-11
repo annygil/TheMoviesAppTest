@@ -13,6 +13,7 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { TopFiveMoviesComponent } from './top-five-movies/top-five-movies.component';
 import { FavItemComponent } from './fav-item/fav-item.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FavItemComponent } from './fav-item/fav-item.component';
     MovieDetailComponent,
     AddMovieComponent,
     TopFiveMoviesComponent,
-    FavItemComponent
+    FavItemComponent,
+    ErrorComponent
   ],
   imports: [
     FormsModule,

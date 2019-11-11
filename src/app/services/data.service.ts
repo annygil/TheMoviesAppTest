@@ -25,11 +25,19 @@ export class DataService {
     });
     this.listSource.next(datalist);
   }
-  addItem( item : Movie ){
-    let datalist: any[] = this.listSource.getValue();
-    item.id=this.uuidv4();
-    datalist.push(item);
-    this.listSource.next(datalist);  
+  addItem( item : Movie ):boolean{
+    if( item.description!=null && item.title!=null && item.image!=null ){
+      let datalist: any[] = this.listSource.getValue();
+      item.id=this.uuidv4();
+      datalist.push(item);
+      this.listSource.next(datalist); 
+      return true;
+    }
+    else{
+      return false;
+    }
+
+
   }
    uuidv4() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {

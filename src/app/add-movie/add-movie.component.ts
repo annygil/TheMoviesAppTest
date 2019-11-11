@@ -39,8 +39,12 @@ export class AddMovieComponent implements OnInit {
       this.itemForm.title=this.MovieForm.value.title;
       this.itemForm.description=this.MovieForm.value.description;
       this.itemForm.release=new Date(this.release);
-      this.data.addItem(this.itemForm);
-      this.route.navigate(["/home"]);
+      var response=this.data.addItem(this.itemForm);
+      if(response ==true){
+        this.route.navigate(["/home"]);
+      }else{
+        this.route.navigate(["/error"]);
+      }
     }
   }
   preview(event) {

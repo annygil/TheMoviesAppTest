@@ -13,6 +13,8 @@ import {FavItemComponent} from '../fav-item/fav-item.component'
 import { of } from 'rxjs';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import {HttpClientModule} from '@angular/common/http';
+import { ReactiveFormsModule } from  '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 const newMovie = new Movie();
 newMovie.title = "my new movie";
 newMovie.release = new Date();
@@ -29,7 +31,10 @@ describe('TopFiveMoviesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule], 
+      imports: [HttpClientTestingModule,
+                ReactiveFormsModule,
+                ReactiveFormsModule,
+                RouterTestingModule], 
       declarations: [ TopFiveMoviesComponent,
                       FavItemComponent ],
       providers: [ HttpClientExternalService]

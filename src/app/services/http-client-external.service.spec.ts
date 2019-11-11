@@ -4,10 +4,15 @@ import { HttpClientExternalService } from './http-client-external.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import {HttpClientModule} from '@angular/common/http';
 import { noUndefined } from '@angular/compiler/src/util';
+import { ReactiveFormsModule } from  '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 describe('HttpClientExternalService', () => {
   
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [HttpClientTestingModule], 
+    imports: [HttpClientTestingModule,
+                ReactiveFormsModule,
+                ReactiveFormsModule,
+                RouterTestingModule],
     providers: [HttpClientExternalService]
   }));
 
