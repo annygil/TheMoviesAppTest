@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from '../services/data.service';
-import {Movie} from '../models/movie'
+import { DataService } from '../services/data.service';
+import { Movie } from '../models/movie'
 
 @Component({
   selector: 'app-list-existing-movies',
@@ -9,20 +9,16 @@ import {Movie} from '../models/movie'
 })
 export class ListExistingMoviesComponent implements OnInit {
 
-  public listMovie:Movie[];
-  constructor(        
-    private data: DataService
-    ) { }
-  
+  public listMovie : Movie[];
 
+  constructor( private data: DataService ) { }
   ngOnInit() {
     this.data.currentList.subscribe(movies => this.listMovie = movies);
   }
-
-  removeItemChild($event){
-    this.data.removeItem($event);
+  removeItemChild( $event ){
+    this.data.removeItem( $event );
   }
-  selectItem(item:Movie){
-    this.data.selectItem(item);
+  selectItem( item : Movie ){
+    this.data.selectItem( item );
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from '../services/data.service';
+import { DataService } from '../services/data.service';
 import { Movie } from '../models/movie';
 @Component({
   selector: 'app-movie-detail',
@@ -10,9 +10,8 @@ export class MovieDetailComponent implements OnInit {
 
   constructor(public data : DataService) { }
   public itemDetail: Movie;
-  public isItemSelected:boolean=false;
+  public isItemSelected : boolean=false;
   ngOnInit() {
-
     this.data.currentItem.subscribe(item=>{
       this.itemDetail= item;
       this.itemDetail==undefined?this.isItemSelected=false:this.isItemSelected=true;

@@ -31,8 +31,7 @@ import { FavItemComponent } from './fav-item/fav-item.component';
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-    
+    HttpClientModule   
   ],
   providers: [],
   bootstrap: [AppComponent]

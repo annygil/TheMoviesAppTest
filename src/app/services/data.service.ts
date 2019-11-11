@@ -1,41 +1,35 @@
 import { Injectable } from '@angular/core';
-import {Movie} from '../models/movie';
+import { Movie } from '../models/movie';
 import { BehaviorSubject } from 'rxjs';
-import { Type } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  movie:Movie;
+  public movie:Movie;
   private listSource = new BehaviorSubject([]);
-  currentList = this.listSource.asObservable();
-
+  public currentList = this.listSource.asObservable();
   private selectedItem = new BehaviorSubject(this.movie);
-  currentItem = this.selectedItem.asObservable();
-  constructor() {
+  public currentItem = this.selectedItem.asObservable();
 
-   }
+  constructor() { }
 
-  selectItem(item: any) {
-  
+  selectItem( item : any ) {
     this.selectedItem.next(item);
   }
-  removeItem(id:string){
-   let datalist: any[] = this.listSource.getValue();
+  removeItem( id : string ){
+    let datalist: any[] = this.listSource.getValue();
     datalist.forEach((item, index) => {
         if(item.id === id) { datalist.splice(index, 1); }
     });
-    
     this.listSource.next(datalist);
   }
-  addItem(item:Movie){
+  addItem( item : Movie ){
     let datalist: any[] = this.listSource.getValue();
     item.id=this.uuidv4();
     datalist.push(item);
     this.listSource.next(datalist);  
-    console.log(this.listSource)
   }
    uuidv4() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {

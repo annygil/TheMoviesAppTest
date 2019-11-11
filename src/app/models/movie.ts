@@ -10,7 +10,7 @@ export class Movie {
         this.title = '';
         this.release = new Date();
         this.description = '';
-        this.image = '';//add default
+        this.image = '';
      
     }
 }

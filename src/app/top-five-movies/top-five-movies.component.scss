@@ -1,10 +1,19 @@
 ul{
     width: 100%;
-    background: #050e15;
-    overflow-x: scroll;
+
 }
 .card-body{
     font-size: 24px;
     color: black;
     font-weight: 600;
+}
+.content{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: flex-end;
 }

@@ -7,19 +7,18 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpClientExternalService {
-  baseUrl = 'http://www.mocky.io/v2/5dc3c053300000540034757b';
-  private listSource = new BehaviorSubject([]);
-  currentList = this.listSource.asObservable();
+  public baseUrl = 'http://www.mocky.io/v2/5dc3c053300000540034757b';
+  public listSource = new BehaviorSubject([]);
+  public currentList = this.listSource.asObservable();
+
   constructor(private httpClient: HttpClient) {
     this.getFavoriteMovies();
-   }
+  }
   
   public getFavoriteMovies() {
-    this.httpClient.get(this.baseUrl)
+    this.httpClient.get<Movie[]>(this.baseUrl)
     .subscribe((res:any)=>{
-     // console.log(res.movies)
       this.listSource.next(res.movies);
-    })
-    
+    })  
   }
 }

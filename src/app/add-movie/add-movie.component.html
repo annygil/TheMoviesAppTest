@@ -1,10 +1,8 @@
 <div class="container" >
-    
     <div class="card">
         <div class="card-header">
             Add Movie
             <button class="btn btn-primary position" (click)="save()" [disabled]="this.MovieForm.invalid" >Save Movie</button>
-      
         </div>
         <div class="card-body">               
             <form [formGroup]="MovieForm">
@@ -27,14 +25,11 @@
                         <input type="file" class="form-control"  [ngClass]="MovieForm.controls['image'].invalid && MovieForm.controls['image'].touched ? 'is-invalid' : ''"  formControlName="image" id="image" accept="image/x-png,image/gif,image/jpeg" (change)="preview($event)"  >
                     </div>
                 </div>
-       
                 <div class="form-group">
                     <label for="description_">Description</label>
                     <textarea type="text" row=100 class="form-control" id="description_"  [ngClass]="MovieForm.controls['description'].invalid && MovieForm.controls['description'].touched ? 'is-invalid' : ''"
                     name=description [(ngModel)]="itemForm.description" formControlName="description" rows="10" placeholder="Description"  required></textarea>
                 </div>
-            
-              
             </form>
         </div>
     </div>

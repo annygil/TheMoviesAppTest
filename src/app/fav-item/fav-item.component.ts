@@ -8,16 +8,15 @@ import { Movie } from '../models/movie';
 })
 export class FavItemComponent implements OnInit {
 
-  @Input() item:Movie;
+  @Input() item : Movie = new Movie();
+  @Output() removeItem = new EventEmitter<number>();
+  public id=this.uuidv4();
+  
   constructor() { }
-  id=this.uuidv4();
+  ngOnInit() { }
 
-  @Output() removeItem=new EventEmitter<number>();
-  ngOnInit() {
-    
-  }
-  remove(id:number){
-    this.removeItem.emit(id);
+  remove( id : number ) {
+    this.removeItem.emit( id );
   }
   uuidv4() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {

@@ -8,14 +8,13 @@ import { Movie } from '../models/movie';
 })
 export class ItemComponent implements OnInit {
 
-  @Input() item:Movie;
-  constructor() { }
-
+  @Input() item : Movie = new Movie();
   @Output() removeItem=new EventEmitter<string>();
-  ngOnInit() {
-
-  }
-  remove(id:string){
-    this.removeItem.emit(id);
+  
+  constructor() { }
+  ngOnInit() { }
+  
+  remove( id : string ){
+    this.removeItem.emit( id );
   }
 }

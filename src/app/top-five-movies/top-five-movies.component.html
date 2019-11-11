@@ -1,13 +1,11 @@
-<div style="width:100%;height: 400px;">
-    <img class="d-block w-100" src="https://www.reelcinemas.ae/en/Images/homepage-banner_tcm295-135373.jpg" alt="Second slide">
-</div>
+
 <div class="card" style="background-color: #2125297d;">
     <div class="card-body">
         Top 5 Movies
     </div>
 </div>
 <div>
-    <ul  class = "list-inline" style=" display: -webkit-inline-box !important;">
+    <ul  class = "list-inline content" >
         <li  *ngFor="let item of listMovies" >
             <app-fav-item [item]="item" ></app-fav-item>
         </li>

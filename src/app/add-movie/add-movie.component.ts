@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../models/movie';
-import {DataService} from '../services/data.service';
-import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { ActivatedRoute, Router } from "@angular/router";
+import { DataService } from '../services/data.service';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -13,14 +13,13 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class AddMovieComponent implements OnInit {
 
   public imagePath;
-  imgURL: any;
+  public imgURL: any;
   public release: any=new Date();
   public message: string;
   public itemForm:Movie=<Movie>{};
-  MovieForm: FormGroup;
+  public MovieForm: FormGroup;
   submitted = false;
-  constructor(public data:DataService,public fb: FormBuilder,    private activeRoute: ActivatedRoute,
-    private route: Router) {
+  constructor(public data:DataService,public fb: FormBuilder, private route: Router) {
     this.MovieForm = this.createSignupForm();
    }
   createSignupForm(){
@@ -32,11 +31,7 @@ export class AddMovieComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-
-
-
-  }
+  ngOnInit() {}
 
   save(){
     if (!this.MovieForm.invalid) {

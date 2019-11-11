@@ -1,34 +1,31 @@
-    <div class="card" style="width: 15rem;">
-        <img class="card-img-top" src="{{item.image}}" width=100 heigth=50 alt="Card image cap">
-        <button type="button" class="btn btn-primary" style="background: darkred;" data-toggle="modal" [attr.data-target]="'#'+id">
-            Details
-        </button>
-        <div class="card-body">
-            <h5 class="card-title">{{item.title}}</h5>
-            <p class="card-text">{{item.description.substring(0, 90)}}</p>
+  <div class="card" style="width: 15rem;">
+      <img class="card-img-top" src="{{item.image}}" width=100 heigth=50 alt="Card image cap">
+      <button type="button" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#'+id">
+          Details
+      </button>
+      <div class="card-body">
+          <h5 class="card-title">{{item.title}}</h5>
+          <p class="card-text">{{item.description.substring(0, 90)}}</p>
+      </div>
+  </div>
+  <div class="modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{item.title}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-    </div>
+        <div class="modal-body">
+                {{item.description}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-      
-      <!-- Modal -->
-      <div class="modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">{{item.title}}</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                    {{item.description}}
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    
-            </div>
-          </div>
         </div>
       </div>
+    </div>
+  </div>
 
     
