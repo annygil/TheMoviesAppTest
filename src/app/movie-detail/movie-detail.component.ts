@@ -18,7 +18,7 @@ export class MovieDetailComponent implements OnInit {
       this.itemDetail= item;
       this.itemDetail==undefined?this.isItemSelected=false:this.isItemSelected=true;
     },error=>{
-      this.route.navigate(["/error"]);
+      this.route.navigate(["/404"]);
     });
   }
 

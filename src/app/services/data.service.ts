@@ -25,7 +25,7 @@ export class DataService {
     });
     this.listSource.next(datalist);
   }
-  addItem( item : Movie ):boolean{
+  addItem( item : Movie ) : boolean{
     if( item.description!=null && item.title!=null && item.image!=null ){
       let datalist: any[] = this.listSource.getValue();
       item.id=this.uuidv4();

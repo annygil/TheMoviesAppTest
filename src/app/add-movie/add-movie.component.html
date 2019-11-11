@@ -15,7 +15,7 @@
                     <div class="form-group col-md-4">
                         <label for="moviedate">Movie Date</label>
                         <input type="date" class="form-control" id="moviedate"  
-                        [(ngModel)]="release" (onchange)="print_()" formControlName="release" name="release "required>
+                          formControlName="release" name="release "required>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="movieimage">Movie Image</label>
@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label for="description_">Description</label>
                     <textarea type="text" row=100 class="form-control" id="description_"  [ngClass]="MovieForm.controls['description'].invalid && MovieForm.controls['description'].touched ? 'is-invalid' : ''"
-                    name=description [(ngModel)]="itemForm.description" formControlName="description" rows="10" placeholder="Description"  required></textarea>
+                    name=description formControlName="description" rows="10" placeholder="Description"  required></textarea>
                 </div>
             </form>
         </div>

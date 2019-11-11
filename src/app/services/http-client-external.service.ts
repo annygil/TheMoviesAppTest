@@ -21,8 +21,11 @@ export class HttpClientExternalService {
     this.httpClient.get<Movie[]>(this.baseUrl)
     .subscribe((res:any)=>{
       this.listSource.next(res.movies);
+      console.log("'¿'¿'¿'¿",res)
     }, error=>{
-      this.route.navigate(["/error"]);
+      console.log("'¿'¿'¿'¿",error
+      )
+      this.route.navigate(["/404"]);
 
     })  
   }

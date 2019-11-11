@@ -43,7 +43,7 @@ export class AddMovieComponent implements OnInit {
       if(response ==true){
         this.route.navigate(["/home"]);
       }else{
-        this.route.navigate(["/error"]);
+        this.route.navigate(["/404"]);
       }
     }
   }

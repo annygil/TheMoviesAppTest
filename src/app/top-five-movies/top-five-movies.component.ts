@@ -13,6 +13,7 @@ export class TopFiveMoviesComponent implements OnInit {
 
   ngOnInit() {
     this.get();
+
   }
   get(){
     this.service.currentList.subscribe(list=>this.listMovies=list);

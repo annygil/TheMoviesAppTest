@@ -17,7 +17,7 @@ export class ListExistingMoviesComponent implements OnInit {
     this.data.currentList.subscribe((movies:Movie[]) => {
         this.listMovie = movies
       },error=>{
-        this.route.navigate(["/error"]);
+        this.route.navigate(["/404"]);
 
       });
     ;
