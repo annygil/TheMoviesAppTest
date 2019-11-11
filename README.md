@@ -6,6 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Steps for run
 
 1- npm install
+
 2- ng serve
 
 ## Steps for test
