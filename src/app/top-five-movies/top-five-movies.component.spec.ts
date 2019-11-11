@@ -48,13 +48,5 @@ describe('TopFiveMoviesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  /*it('should... ANNYYYYYYYYYYYYY' ,inject([HttpClientExternalService],(service:HttpClientExternalService)), async(() => {
-    var dataStub = fixture.debugElement.injector.get(httpClientExternalServiceStub);
-    const spy = spyOn(dataStub, 'getFavoriteMovies').and.returnValue(
-      of([newMovie])
-    );
-    component.ngOnInit();
-    fixture.detectChanges();
-    expect(component.listMovies[0]).toEqual(newMovie);
-  }));*/
+
 });
