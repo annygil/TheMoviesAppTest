@@ -1,68 +1,46 @@
 import { Injectable } from '@angular/core';
 import {Movie} from '../models/movie';
 import { BehaviorSubject } from 'rxjs';
+import { Type } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  public list:Movie[]= [
-    {
-        title: "Forest Gump",
-        release: new Date('12-12-1994'),
-        description: "Comedy",
-        image:"",
-        id:1
-        
-    },
-    {
-        title: "Harry Potter",
-        release: new Date('12-12-2001'),
-        description: "Fantasy Fiction",
-        image:"",
-        id:2  
-    },
-    {
-        title: "Titanic",
-        release: new Date('12-12-1998'),
-        description: "Romance",
-        image:"",
-        id:3
-    },
-     {
-        title: "Best Worst Movie",
-        release: new Date('12-12-2009'),
-        description: "Comedy",
-        image:"",
-        id:4
-    },
-    {
-        title: "Troll 2",
-        release: new Date('12-12-2003'),
-        description: "Horror",
-        image:"",
-        id:5
 
-    }
-];
-
-  private listSource = new BehaviorSubject(this.list);
+  movie:Movie;
+  private listSource = new BehaviorSubject([]);
   currentList = this.listSource.asObservable();
 
+  private selectedItem = new BehaviorSubject(this.movie);
+  currentItem = this.selectedItem.asObservable();
   constructor() {
 
    }
-   changeMovies(movies: any) {
-    this.listSource.next(this.list);
+
+  selectItem(item: any) {
+  
+    this.selectedItem.next(item);
   }
-  removeItem(id:number){
+  removeItem(id:string){
    let datalist: any[] = this.listSource.getValue();
     datalist.forEach((item, index) => {
         if(item.id === id) { datalist.splice(index, 1); }
     });
+    
     this.listSource.next(datalist);
   }
-  addUpdateItem(){
-
+  addItem(item:Movie){
+    let datalist: any[] = this.listSource.getValue();
+    item.id=this.uuidv4();
+    datalist.push(item);
+    this.listSource.next(datalist);  
+    console.log(this.listSource)
+  }
+   uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
   }
 }

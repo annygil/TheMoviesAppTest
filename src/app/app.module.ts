@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { ListExistingMoviesComponent } from './list-existing-movies/list-existing-movies.component';
 import { ItemComponent } from './item/item.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { AddMovieComponent } from './add-movie/add-movie.component';
+import { TopFiveMoviesComponent } from './top-five-movies/top-five-movies.component';
+import { FavItemComponent } from './fav-item/fav-item.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +21,18 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     HomeComponent,
     ListExistingMoviesComponent,
     ItemComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    AddMovieComponent,
+    TopFiveMoviesComponent,
+    FavItemComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

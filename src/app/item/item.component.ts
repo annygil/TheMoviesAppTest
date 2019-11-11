@@ -11,11 +11,11 @@ export class ItemComponent implements OnInit {
   @Input() item:Movie;
   constructor() { }
 
-  @Output() removeItem=new EventEmitter<number>();
+  @Output() removeItem=new EventEmitter<string>();
   ngOnInit() {
 
   }
-  remove(id:number){
+  remove(id:string){
     this.removeItem.emit(id);
   }
 }

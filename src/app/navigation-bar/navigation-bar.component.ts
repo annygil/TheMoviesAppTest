@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-navigation-bar',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activeRoute: ActivatedRoute,
+    private route: Router) { }
 
   ngOnInit() {
   }
+  redirectToAdd(){
+    this.route.navigate(["/addMovie"]);
 
+  }
+  redirectToHome(){
+    this.route.navigate(["/home"]);
+
+  }
+  redirectToTopFive(){
+    this.route.navigate(["/top"]);
+
+  }
 }

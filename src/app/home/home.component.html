@@ -1,8 +1,9 @@
 
-<app-navigation-bar></app-navigation-bar>
 <div class="row ">
-    <app-list-existing-movies  class="col-3 content"></app-list-existing-movies>
-    <div class="col-9 content">
+    <app-list-existing-movies  class="col-sm-12 col-md-3 content"></app-list-existing-movies>
+    <div class="col-sm-12 col-md-9 content">
+            
+        <button class="btn btn-primary position" (click)="redirectAddNewMovie()">Add New Movie</button>
         <app-movie-detail></app-movie-detail>
     </div>
 </div>

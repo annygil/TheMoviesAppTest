@@ -22,4 +22,7 @@ export class ListExistingMoviesComponent implements OnInit {
   removeItemChild($event){
     this.data.removeItem($event);
   }
+  selectItem(item:Movie){
+    this.data.selectItem(item);
+  }
 }

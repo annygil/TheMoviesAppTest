@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor( private activeRoute: ActivatedRoute,private route: Router) { }
 
   ngOnInit() {
-    console.log("i am here")
   }
+  redirectAddNewMovie(){
+    this.route.navigate(["/addMovie"]);
 
+  }
 }

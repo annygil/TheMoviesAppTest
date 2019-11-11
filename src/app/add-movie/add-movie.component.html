@@ -1,0 +1,41 @@
+<div class="container" >
+    
+    <div class="card">
+        <div class="card-header">
+            Add Movie
+            <button class="btn btn-primary position" (click)="save()" [disabled]="this.MovieForm.invalid" >Save Movie</button>
+      
+        </div>
+        <div class="card-body">               
+            <form [formGroup]="MovieForm">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="movietitle">Movie Title</label>
+                        <input type="text" class="form-control" id="title" placeholder="Movie Title" [ngClass]="MovieForm.controls['title'].invalid && MovieForm.controls['title'].touched ? 'is-invalid' : ''"
+                        formControlName="title">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="moviedate">Movie Date</label>
+                        <input type="date" class="form-control" id="moviedate"  
+                        [(ngModel)]="release" (onchange)="print_()" formControlName="release" name="release "required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="movieimage">Movie Image</label>
+                        <label for="image" class="custom-file-upload">
+                            Custom Upload
+                        </label>
+                        <input type="file" class="form-control"  [ngClass]="MovieForm.controls['image'].invalid && MovieForm.controls['image'].touched ? 'is-invalid' : ''"  formControlName="image" id="image" accept="image/x-png,image/gif,image/jpeg" (change)="preview($event)"  >
+                    </div>
+                </div>
+       
+                <div class="form-group">
+                    <label for="description_">Description</label>
+                    <textarea type="text" row=100 class="form-control" id="description_"  [ngClass]="MovieForm.controls['description'].invalid && MovieForm.controls['description'].touched ? 'is-invalid' : ''"
+                    name=description [(ngModel)]="itemForm.description" formControlName="description" rows="10" placeholder="Description"  required></textarea>
+                </div>
+            
+              
+            </form>
+        </div>
+    </div>
+</div>
